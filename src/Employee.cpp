@@ -11,13 +11,12 @@
  *   we can use to demonstrate  key/value pair
  *   management.
  */
-#include <string>
-#include <iostream>
-#include <iomanip>
-#include <sstream>
 #include "Employee.hpp"
+#include <iomanip>
+#include <iostream>
+#include <sstream>
+#include <string>
 using namespace std;
-
 
 /** constructor
  * Default constructor for our Employee record/class.  Construct an
@@ -31,7 +30,6 @@ Employee::Employee()
   this->salary = 0.0;
 }
 
-
 /** constructor
  * Basic constructor for our Employee record/class.
  */
@@ -43,7 +41,6 @@ Employee::Employee(int id, string name, string address, float salary)
   this->salary = salary;
 }
 
-
 /** id accessor
  * Accessor method to get the employee id.
  *
@@ -53,7 +50,6 @@ int Employee::getId() const
 {
   return id;
 }
-
 
 /** name accessor
  * Accessor method to get the employee name.
@@ -66,7 +62,6 @@ string Employee::getName() const
   return name;
 }
 
-
 /** to string
  * Create and return a string representation of this Employee record.
  *
@@ -77,14 +72,10 @@ string Employee::str() const
 {
   ostringstream out;
 
-  out << "( id: " << id << " | "
-      << name << " | "
-      << address << " | "
-      << fixed << setprecision(2) << salary << " )";
+  out << "( id: " << id << " | " << name << " | " << address << " | " << fixed << setprecision(2) << salary << " )";
 
   return out.str();
 }
-
 
 /** overload operator<<
  * Friend function to ouput representation of Employee to an

@@ -9,10 +9,10 @@
  *
  * Tests of the HashDictionary hash table implementation of the Dictionary API.
  */
+#include "DictionaryException.hpp"
+#include "catch.hpp"
 #include <iostream>
 #include <string>
-#include "catch.hpp"
-#include "DictionaryException.hpp"
 // a testing kludge so we can test some private members you are to implement for this task
 #define private public
 #include "HashDictionary.hpp"
@@ -20,54 +20,47 @@
 #include "Employee.hpp"
 using namespace std;
 
-
 // multiline string literal expected for empty tables
-const string emptyTable =
-  "<HashDictionary> size: 0\n"
-  "Slot: 0\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 1\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 2\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 3\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 4\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n";
-
+const string emptyTable = "<HashDictionary> size: 0\n"
+                          "Slot: 0\n"
+                          "     Key  : EMPTY\n"
+                          "     Value:\n"
+                          "Slot: 1\n"
+                          "     Key  : EMPTY\n"
+                          "     Value:\n"
+                          "Slot: 2\n"
+                          "     Key  : EMPTY\n"
+                          "     Value:\n"
+                          "Slot: 3\n"
+                          "     Key  : EMPTY\n"
+                          "     Value:\n"
+                          "Slot: 4\n"
+                          "     Key  : EMPTY\n"
+                          "     Value:\n";
 
 /** Test HashDictionary construction and basic operations
  */
-TEST_CASE("HashDictionaryNode<int, int> test hash dictionary construction <int,int> key/value types",
-          "[task0]")
+TEST_CASE("HashDictionaryNode<int, int> test hash dictionary construction <int,int> key/value types", "[task0]")
 {
   // test empty tree construction
   HashDictionary<int, int> empty;
   CHECK(empty.getSize() == 0);
   CHECK(empty.getAllocationSize() == 5);
-  CHECK(empty.isEmpty() );
+  CHECK(empty.isEmpty());
   CHECK(empty.str() == emptyTable);
 }
 
-
 /** Test HashDictionary construction and basic operations
  */
-TEST_CASE("HashDictionaryNode<int, Employee> test hash dictionaryconstruction <int,Employee> key/value types",
-          "[task0]")
+TEST_CASE("HashDictionaryNode<int, Employee> test hash dictionaryconstruction <int,Employee> key/value types", "[task0]")
 {
   // test empty tree construction
   HashDictionary<int, Employee> empty;
   CHECK(empty.getSize() == 0);
   CHECK(empty.getAllocationSize() == 5);
-  CHECK(empty.isEmpty() );
+  CHECK(empty.isEmpty());
   CHECK(empty.str() == emptyTable);
 }
-
 
 /** Test HashDictionary probe hashing helper function
  */
@@ -100,7 +93,6 @@ TEST_CASE("HashDictionaryNode<int, Employee> test hash dictionaryconstruction <i
    CHECK(dict.probe(id, 12345) == 152423717);
    }
  */
-
 
 /** Test HashDictionary hash hashing helper function, for a table of size 7
  */
@@ -167,7 +159,6 @@ TEST_CASE("HashDictionaryNode<int, Employee> test hash dictionaryconstruction <i
    }
  */
 
-
 /** Test HashDictionary hash hashing helper function, for a table of size 31
  */
 /*
@@ -231,7 +222,6 @@ TEST_CASE("HashDictionaryNode<int, Employee> test hash dictionaryconstruction <i
    CHECK(dict.hash(id) == 18);
    }
  */
-
 
 /** Test HashDictionary probeForAvailableSlot.  We need to implement
  * insert() before we can create more extensive tests, so we build
@@ -319,7 +309,6 @@ TEST_CASE("HashDictionaryNode<int, Employee> test hash dictionaryconstruction <i
    }
  */
 
-
 /** Test HashDictionary probeForKeySlot.  We need to implement
  * insert() before we can create more extensive tests, so we build
  * a table of empty and non empty values by hand here.
@@ -404,97 +393,93 @@ TEST_CASE("HashDictionaryNode<int, Employee> test hash dictionaryconstruction <i
    }
  */
 
+const string tableAfterGrowingTo14Slots = "<HashDictionary> size: 4\n"
+                                          "Slot: 0\n"
+                                          "     Key  : 362817371\n"
+                                          "     Value: ( id: 362817371 | Poovey, Pam | 8913 Cooper Blvd. Madison WI | 44319.25 )\n"
+                                          "Slot: 1\n"
+                                          "     Key  : 998439281\n"
+                                          "     Value: ( id: 998439281 | Krieger, Doctor | 92 Washing Apt 5 Boston MD | 48319.50 )\n"
+                                          "Slot: 2\n"
+                                          "     Key  : EMPTY\n"
+                                          "     Value:\n"
+                                          "Slot: 3\n"
+                                          "     Key  : 192834192\n"
+                                          "     Value: ( id: 192834192 | Kane, Lana | 32 Avenue Washington DC | 64381.45 )\n"
+                                          "Slot: 4\n"
+                                          "     Key  : EMPTY\n"
+                                          "     Value:\n"
+                                          "Slot: 5\n"
+                                          "     Key  : EMPTY\n"
+                                          "     Value:\n"
+                                          "Slot: 6\n"
+                                          "     Key  : EMPTY\n"
+                                          "     Value:\n"
+                                          "Slot: 7\n"
+                                          "     Key  : EMPTY\n"
+                                          "     Value:\n"
+                                          "Slot: 8\n"
+                                          "     Key  : 438901234\n"
+                                          "     Value: ( id: 438901234 | Archer, Sterling | 123 Spy St. New York NY | 58427.23 )\n"
+                                          "Slot: 9\n"
+                                          "     Key  : EMPTY\n"
+                                          "     Value:\n"
+                                          "Slot: 10\n"
+                                          "     Key  : EMPTY\n"
+                                          "     Value:\n"
+                                          "Slot: 11\n"
+                                          "     Key  : EMPTY\n"
+                                          "     Value:\n"
+                                          "Slot: 12\n"
+                                          "     Key  : EMPTY\n"
+                                          "     Value:\n"
+                                          "Slot: 13\n"
+                                          "     Key  : EMPTY\n"
+                                          "     Value:\n";
 
-const string tableAfterGrowingTo14Slots =
-  "<HashDictionary> size: 4\n"
-  "Slot: 0\n"
-  "     Key  : 362817371\n"
-  "     Value: ( id: 362817371 | Poovey, Pam | 8913 Cooper Blvd. Madison WI | 44319.25 )\n"
-  "Slot: 1\n"
-  "     Key  : 998439281\n"
-  "     Value: ( id: 998439281 | Krieger, Doctor | 92 Washing Apt 5 Boston MD | 48319.50 )\n"
-  "Slot: 2\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 3\n"
-  "     Key  : 192834192\n"
-  "     Value: ( id: 192834192 | Kane, Lana | 32 Avenue Washington DC | 64381.45 )\n"
-  "Slot: 4\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 5\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 6\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 7\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 8\n"
-  "     Key  : 438901234\n"
-  "     Value: ( id: 438901234 | Archer, Sterling | 123 Spy St. New York NY | 58427.23 )\n"
-  "Slot: 9\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 10\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 11\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 12\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 13\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n";
-
-const string finalTableAfterInserts =
-  "<HashDictionary> size: 7\n"
-  "Slot: 0\n"
-  "     Key  : 362817371\n"
-  "     Value: ( id: 362817371 | Poovey, Pam | 8913 Cooper Blvd. Madison WI | 44319.25 )\n"
-  "Slot: 1\n"
-  "     Key  : 998439281\n"
-  "     Value: ( id: 998439281 | Krieger, Doctor | 92 Washing Apt 5 Boston MD | 48319.50 )\n"
-  "Slot: 2\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 3\n"
-  "     Key  : 192834192\n"
-  "     Value: ( id: 192834192 | Kane, Lana | 32 Avenue Washington DC | 64381.45 )\n"
-  "Slot: 4\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 5\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 6\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 7\n"
-  "     Key  : 272349829\n"
-  "     Value: ( id: 272349829 | Figgis, Cyril | 83 Rodeo Drive Phoenix AZ | 38560.38 )\n"
-  "Slot: 8\n"
-  "     Key  : 438901234\n"
-  "     Value: ( id: 438901234 | Archer, Sterling | 123 Spy St. New York NY | 58427.23 )\n"
-  "Slot: 9\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 10\n"
-  "     Key  : 272349839\n"
-  "     Value: ( id: 272349839 | Gilette, Ray | 2015 Fm. Rd 98 Mobile AL | 44560.28 )\n"
-  "Slot: 11\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 12\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 13\n"
-  "     Key  : 272349849\n"
-  "     Value: ( id: 272349849 | Tunt, Cheryl | Park Ave. New York NY | 22520.45 )\n";
-
+const string finalTableAfterInserts = "<HashDictionary> size: 7\n"
+                                      "Slot: 0\n"
+                                      "     Key  : 362817371\n"
+                                      "     Value: ( id: 362817371 | Poovey, Pam | 8913 Cooper Blvd. Madison WI | 44319.25 )\n"
+                                      "Slot: 1\n"
+                                      "     Key  : 998439281\n"
+                                      "     Value: ( id: 998439281 | Krieger, Doctor | 92 Washing Apt 5 Boston MD | 48319.50 )\n"
+                                      "Slot: 2\n"
+                                      "     Key  : EMPTY\n"
+                                      "     Value:\n"
+                                      "Slot: 3\n"
+                                      "     Key  : 192834192\n"
+                                      "     Value: ( id: 192834192 | Kane, Lana | 32 Avenue Washington DC | 64381.45 )\n"
+                                      "Slot: 4\n"
+                                      "     Key  : EMPTY\n"
+                                      "     Value:\n"
+                                      "Slot: 5\n"
+                                      "     Key  : EMPTY\n"
+                                      "     Value:\n"
+                                      "Slot: 6\n"
+                                      "     Key  : EMPTY\n"
+                                      "     Value:\n"
+                                      "Slot: 7\n"
+                                      "     Key  : 272349829\n"
+                                      "     Value: ( id: 272349829 | Figgis, Cyril | 83 Rodeo Drive Phoenix AZ | 38560.38 )\n"
+                                      "Slot: 8\n"
+                                      "     Key  : 438901234\n"
+                                      "     Value: ( id: 438901234 | Archer, Sterling | 123 Spy St. New York NY | 58427.23 )\n"
+                                      "Slot: 9\n"
+                                      "     Key  : EMPTY\n"
+                                      "     Value:\n"
+                                      "Slot: 10\n"
+                                      "     Key  : 272349839\n"
+                                      "     Value: ( id: 272349839 | Gilette, Ray | 2015 Fm. Rd 98 Mobile AL | 44560.28 )\n"
+                                      "Slot: 11\n"
+                                      "     Key  : EMPTY\n"
+                                      "     Value:\n"
+                                      "Slot: 12\n"
+                                      "     Key  : EMPTY\n"
+                                      "     Value:\n"
+                                      "Slot: 13\n"
+                                      "     Key  : 272349849\n"
+                                      "     Value: ( id: 272349849 | Tunt, Cheryl | Park Ave. New York NY | 22520.45 )\n";
 
 /** Test HashDictionary insert API operation
  */
@@ -626,7 +611,6 @@ const string finalTableAfterInserts =
    }
  */
 
-
 /** Test HashDictionary find API operation
  */
 /*
@@ -713,51 +697,49 @@ const string finalTableAfterInserts =
    }
  */
 
-
-const string tableAfter3Removals =
-  "<HashDictionary> size: 4\n"
-  "Slot: 0\n"
-  "     Key  : 362817371\n"
-  "     Value: ( id: 362817371 | Poovey, Pam | 8913 Cooper Blvd. Madison WI | 44319.25 )\n"
-  "Slot: 1\n"
-  "     Key  : MISSING\n"
-  "     Value:\n"
-  "Slot: 2\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 3\n"
-  "     Key  : 192834192\n"
-  "     Value: ( id: 192834192 | Kane, Lana | 32 Avenue Washington DC | 64381.45 )\n"
-  "Slot: 4\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 5\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 6\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 7\n"
-  "     Key  : 272349829\n"
-  "     Value: ( id: 272349829 | Figgis, Cyril | 83 Rodeo Drive Phoenix AZ | 38560.38 )\n"
-  "Slot: 8\n"
-  "     Key  : MISSING\n"
-  "     Value:\n"
-  "Slot: 9\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 10\n"
-  "     Key  : 272349839\n"
-  "     Value: ( id: 272349839 | Gilette, Ray | 2015 Fm. Rd 98 Mobile AL | 44560.28 )\n"
-  "Slot: 11\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 12\n"
-  "     Key  : EMPTY\n"
-  "     Value:\n"
-  "Slot: 13\n"
-  "     Key  : MISSING\n"
-  "     Value:\n";
+const string tableAfter3Removals = "<HashDictionary> size: 4\n"
+                                   "Slot: 0\n"
+                                   "     Key  : 362817371\n"
+                                   "     Value: ( id: 362817371 | Poovey, Pam | 8913 Cooper Blvd. Madison WI | 44319.25 )\n"
+                                   "Slot: 1\n"
+                                   "     Key  : MISSING\n"
+                                   "     Value:\n"
+                                   "Slot: 2\n"
+                                   "     Key  : EMPTY\n"
+                                   "     Value:\n"
+                                   "Slot: 3\n"
+                                   "     Key  : 192834192\n"
+                                   "     Value: ( id: 192834192 | Kane, Lana | 32 Avenue Washington DC | 64381.45 )\n"
+                                   "Slot: 4\n"
+                                   "     Key  : EMPTY\n"
+                                   "     Value:\n"
+                                   "Slot: 5\n"
+                                   "     Key  : EMPTY\n"
+                                   "     Value:\n"
+                                   "Slot: 6\n"
+                                   "     Key  : EMPTY\n"
+                                   "     Value:\n"
+                                   "Slot: 7\n"
+                                   "     Key  : 272349829\n"
+                                   "     Value: ( id: 272349829 | Figgis, Cyril | 83 Rodeo Drive Phoenix AZ | 38560.38 )\n"
+                                   "Slot: 8\n"
+                                   "     Key  : MISSING\n"
+                                   "     Value:\n"
+                                   "Slot: 9\n"
+                                   "     Key  : EMPTY\n"
+                                   "     Value:\n"
+                                   "Slot: 10\n"
+                                   "     Key  : 272349839\n"
+                                   "     Value: ( id: 272349839 | Gilette, Ray | 2015 Fm. Rd 98 Mobile AL | 44560.28 )\n"
+                                   "Slot: 11\n"
+                                   "     Key  : EMPTY\n"
+                                   "     Value:\n"
+                                   "Slot: 12\n"
+                                   "     Key  : EMPTY\n"
+                                   "     Value:\n"
+                                   "Slot: 13\n"
+                                   "     Key  : MISSING\n"
+                                   "     Value:\n";
 
 /** Test HashDictionary remove API operation
  */
@@ -846,7 +828,6 @@ const string tableAfter3Removals =
    CHECK(dict.isEmpty() );
    }
  */
-
 
 /** Test HashDictionary remove API operation.  Further tests that if remove
  * a value in a probe sequence, the value is set to MISSING, and find, remove

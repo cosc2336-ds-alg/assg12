@@ -10,10 +10,9 @@
  * Implement all exception methods that can be generated and thrown by Dictionary
  * instances.
  */
-#include <string>
 #include "DictionaryException.hpp"
+#include <string>
 using namespace std;
-
 
 /**
  * @brief DictionaryKeyNotFoundException constructor
@@ -28,17 +27,13 @@ DictionaryKeyNotFoundException::DictionaryKeyNotFoundException(const string& mes
   this->message = message;
 }
 
-
 /**
  * @brief DictionaryKeyNotFoundException destructor
  *
  * Destructor for exceptions used for our DictionaryKeyNotFoundException
  * class.
  */
-DictionaryKeyNotFoundException::~DictionaryKeyNotFoundException()
-{
-}
-
+DictionaryKeyNotFoundException::~DictionaryKeyNotFoundException() {}
 
 /**
  * @brief DictionaryKeyNotFoundException message
@@ -54,7 +49,6 @@ const char* DictionaryKeyNotFoundException::what() const throw()
   return message.c_str();
 }
 
-
 /**
  * @brief DictionaryKeyFormattingException constructor
  *
@@ -68,17 +62,13 @@ DictionaryKeyFormattingException::DictionaryKeyFormattingException(const string&
   this->message = message;
 }
 
-
 /**
  * @brief DictionaryKeyFormattingException destructor
  *
  * Destructor for exceptions used for our DictionaryKeyFormattingException
  * class.
  */
-DictionaryKeyFormattingException::~DictionaryKeyFormattingException()
-{
-}
-
+DictionaryKeyFormattingException::~DictionaryKeyFormattingException() {}
 
 /**
  * @brief DictionaryKeyFormattingException message
@@ -94,7 +84,6 @@ const char* DictionaryKeyFormattingException::what() const throw()
   return message.c_str();
 }
 
-
 /**
  * @brief DictionaryDuplicateKeyInsertionException constructor
  *
@@ -108,17 +97,13 @@ DictionaryDuplicateKeyInsertionException::DictionaryDuplicateKeyInsertionExcepti
   this->message = message;
 }
 
-
 /**
  * @brief DictionaryDuplicateKeyInsertionException destructor
  *
  * Destructor for exceptions used for our DictionaryDuplicateKeyInsertionException
  * class.
  */
-DictionaryDuplicateKeyInsertionException::~DictionaryDuplicateKeyInsertionException()
-{
-}
-
+DictionaryDuplicateKeyInsertionException::~DictionaryDuplicateKeyInsertionException() {}
 
 /**
  * @brief DictionaryDuplicateKeyInsertionException message
@@ -134,7 +119,6 @@ const char* DictionaryDuplicateKeyInsertionException::what() const throw()
   return message.c_str();
 }
 
-
 /**
  * @brief DictionaryMemoryBoundsException constructor
  *
@@ -148,17 +132,13 @@ DictionaryMemoryBoundsException::DictionaryMemoryBoundsException(const string& m
   this->message = message;
 }
 
-
 /**
  * @brief DictionaryMemoryBoundsException destructor
  *
  * Destructor for exceptions used for our DictionaryMemoryBoundsException
  * class.
  */
-DictionaryMemoryBoundsException::~DictionaryMemoryBoundsException()
-{
-}
-
+DictionaryMemoryBoundsException::~DictionaryMemoryBoundsException() {}
 
 /**
  * @brief DictionaryMemoryBoundsException message

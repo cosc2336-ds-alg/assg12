@@ -14,7 +14,6 @@
 #ifndef KEYVALUEPAIR_HPP
 #define KEYVALUEPAIR_HPP
 
-
 /** KeyValue Pair
  * Definition of basic key/value pair container.  This container of course
  * associates a value (usually a record like a class or struct), with
@@ -33,7 +32,7 @@
  * states for a KeyaluePair in a container slot where we may need
  * to if the value slot is empty or missing.
  */
-template <class Key, class Value>
+template<class Key, class Value>
 class KeyValuePair
 {
 private:
@@ -70,6 +69,5 @@ public:
   bool isEmpty() const;
   bool isMissing() const;
 };
-
 
 #endif // KEYVALUEPAIR_HPP

@@ -15,12 +15,11 @@
  * API abstraction.  You need to add the implementations for the
  * member functions for this assignment to this file.
  */
-#include <sstream>
 #include "HashDictionary.hpp"
 #include "DictionaryException.hpp"
 #include "Employee.hpp"
+#include <sstream>
 using namespace std;
-
 
 /** grow dictionary
  * Private member method that will increase the memory allocation if
@@ -33,7 +32,7 @@ using namespace std;
  * allocate a new block of memory, but all of the old key/value pairs
  * must be rehashed into the new table.
  */
-template <class Key, class Value>
+template<class Key, class Value>
 void HashDictionary<Key, Value>::growHashDictionaryIfNeeded()
 {
   // if size is still less than 50% of the allocated size, then we don't need
@@ -83,7 +82,7 @@ void HashDictionary<Key, Value>::growHashDictionaryIfNeeded()
     // any key that is not empty we want to insert into the new table
     if (not oldHashTable[index].isEmpty())
     {
-      //insert(oldHashTable[index].getKey(), oldHashTable[index].getValue());
+      // insert(oldHashTable[index].getKey(), oldHashTable[index].getValue());
     }
   }
 
@@ -91,14 +90,13 @@ void HashDictionary<Key, Value>::growHashDictionaryIfNeeded()
   delete[] oldHashTable;
 }
 
-
 /** constructor
  * Standard constructor for the HashDictionary
  *
  * @param allocationSize The size of the hash table that should be
  *   generated for internal use by this dictionary for hasing.
  */
-template <class Key, class Value>
+template<class Key, class Value>
 HashDictionary<Key, Value>::HashDictionary(int allocationSize)
 {
   // use initial indicated allocation size for this hash table,
@@ -116,7 +114,6 @@ HashDictionary<Key, Value>::HashDictionary(int allocationSize)
   }
 }
 
-
 /** array based constructor
  * Construct a new hash dictionary from a given set of parallel
  * arrays of the intiial key/value pairs for the dictionary.
@@ -129,7 +126,7 @@ HashDictionary<Key, Value>::HashDictionary(int allocationSize)
  * @param values An array of length size of the corresponding
  *   values to be inserted into this new hash dictionary.
  */
-template <class Key, class Value>
+template<class Key, class Value>
 HashDictionary<Key, Value>::HashDictionary(int size, const Key keys[], const Value values[])
 {
   // create a hash table that is initially double the size of the values we are
@@ -149,23 +146,21 @@ HashDictionary<Key, Value>::HashDictionary(int size, const Key keys[], const Val
   // insert the key/value pairs given in the parallel arrays into the dictionary
   for (int index = 0; index < size; index++)
   {
-    //insert(keys[index], values[index]);
+    // insert(keys[index], values[index]);
   }
 }
-
 
 /** destructor
  * Standard destructor for the HashDictionary.  Be good memory managers and
  * free up the dynamically allocated array of memory pointed to by hashTable.
  */
-template <class Key, class Value>
+template<class Key, class Value>
 HashDictionary<Key, Value>::~HashDictionary()
 {
   // call clear to do actual work to deallocate any allocation beforw
   // we destruct
   clear();
 }
-
 
 /** get current allocation
  * Accessor method to get the current memory allocation of this hash
@@ -174,12 +169,11 @@ HashDictionary<Key, Value>::~HashDictionary()
  * @returns int Returns the current memory allocation size of this hash
  *   dictionary instance.
  */
-template <class Key, class Value>
+template<class Key, class Value>
 int HashDictionary<Key, Value>::getAllocationSize() const
 {
   return allocationSize;
 }
-
 
 /** HashDictionary to string
  * We normally wouldn't have
@@ -187,7 +181,7 @@ int HashDictionary<Key, Value>::getAllocationSize() const
  * and learning purposes, we want to be able to display the contents of
  * each slot in the hash table of a HashDictionary container.
  */
-template <class Key, class Value>
+template<class Key, class Value>
 string HashDictionary<Key, Value>::str() const
 {
   ostringstream out;
@@ -219,12 +213,11 @@ string HashDictionary<Key, Value>::str() const
   return out.str();
 }
 
-
 /** clear out hash dictionary
  * Clear or empty out the hash dictionary.  Return the hash table back
  * to an empty dictionary.
  */
-template <class Key, class Value>
+template<class Key, class Value>
 void HashDictionary<Key, Value>::clear()
 {
   // if hash table is not null, it points to a dynamic block of memory, so
@@ -239,7 +232,6 @@ void HashDictionary<Key, Value>::clear()
   Dictionary<Key, Value>::size = 0;
   allocationSize = 0;
 }
-
 
 /** overload indexing operator[]
  * Overload indexing operator[] to provide direct access
@@ -256,21 +248,19 @@ void HashDictionary<Key, Value>::clear()
  *   access the hash table using this indexing operator beyond the bounds
  *   of its memory allocation/index.
  */
-template <class Key, class Value>
+template<class Key, class Value>
 KeyValuePair<Key, Value>& HashDictionary<Key, Value>::operator[](int index)
 {
   if (index < 0 or index >= allocationSize)
   {
     ostringstream out;
-    out << "Error: <HashDictionary::operator[] illegal bounds access: "
-        << index << " table allocation size is currently: "
-        << allocationSize << endl;
+    out << "Error: <HashDictionary::operator[] illegal bounds access: " << index
+        << " table allocation size is currently: " << allocationSize << endl;
     throw DictionaryMemoryBoundsException(out.str());
   }
 
   return hashTable[index];
 }
-
 
 /**
  * @brief Cause specific instance compilations
@@ -285,4 +275,4 @@ KeyValuePair<Key, Value>& HashDictionary<Key, Value>::operator[](int index)
  */
 template class HashDictionary<int, int>;
 template class HashDictionary<int, Employee>;
-//template class HashDictionary<string, double>;
+// template class HashDictionary<string, double>;

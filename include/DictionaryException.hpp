@@ -15,7 +15,6 @@
 #include <string>
 using namespace std;
 
-
 /** @class DictionaryKeyNotFoundException
  * @brief Dictionary Key Not Found Exception for the Dictionary class.
  *
@@ -35,7 +34,6 @@ private:
   /// Stores the particular message describing what caused the exception.
   string message;
 };
-
 
 /** @class DictionaryKeyFormattingException
  * @brief Dictionary Key Not Found Exception for the Dictionary class.
@@ -57,7 +55,6 @@ private:
   string message;
 };
 
-
 /** @class DictionaryDuplicateKeyInsertionException
  * @brief Dictionary Key Not Found Exception for the Dictionary class.
  *
@@ -78,7 +75,6 @@ private:
   string message;
 };
 
-
 /** @class DictionaryMemoryBoundsException
  * @brief Dictionary Key Not Found Exception for the Dictionary class.
  *
@@ -98,6 +94,5 @@ private:
   /// Stores the particular message describing what caused the exception.
   string message;
 };
-
 
 #endif // _DICTIONARY_EXCEPTION_HPP_

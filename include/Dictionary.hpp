@@ -18,7 +18,6 @@
 #include <iostream>
 using namespace std;
 
-
 /** @class Dictionary
  * @brief The Dictionary data type abstraction
  *
@@ -27,7 +26,7 @@ using namespace std;
  * perform with dictionarys, such as insert items and search for items
  * in the collection of key/value pairs.
  */
-template <class Key, class Value>
+template<class Key, class Value>
 class Dictionary
 {
 protected:
@@ -43,12 +42,12 @@ public:
 
   // adding, accessing and removing values from the dictionary
   virtual void clear() = 0;
-  //virtual void insert(const Key& key, const Value& value) = 0;
-  //virtual Value find(const Key& key) const = 0;
-  //virtual Value remove(const Key& key) = 0;
+  // virtual void insert(const Key& key, const Value& value) = 0;
+  // virtual Value find(const Key& key) const = 0;
+  // virtual Value remove(const Key& key) = 0;
 
   // friend functions and friend operators
-  template <typename K, typename V>
+  template<typename K, typename V>
   friend ostream& operator<<(ostream& out, const Dictionary<K, V>& rhs);
 };
 

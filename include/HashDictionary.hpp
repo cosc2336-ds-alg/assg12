@@ -18,11 +18,10 @@
  */
 #ifndef HASHDICTIONARY_HPP
 #define HASHDICTIONARY_HPP
-#include <string>
 #include "Dictionary.hpp"
 #include "KeyValuePair.hpp"
+#include <string>
 using namespace std;
-
 
 /** HashDictionary
  * An implementation of a dictionary that uses a hash table to insert, search
@@ -31,7 +30,7 @@ using namespace std;
  * will implement a version of the mid-square hashing function described in
  * our Shaffer textbook.
  */
-template <class Key, class Value>
+template<class Key, class Value>
 class HashDictionary : public Dictionary<Key, Value>
 {
 private:

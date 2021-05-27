@@ -23,7 +23,9 @@
 #include <string>
 using namespace std;
 
-/** HashDictionary
+/** @class HashDictionary
+ * @brief Concrete array based implementation of Dictionary API
+ *
  * An implementation of a dictionary that uses a hash table to insert, search
  * and delete a set of KeyValuePair items.  In the assignment, we will be
  * implementing a closed hashing table with quadratic probing.  The hash function
@@ -33,21 +35,6 @@ using namespace std;
 template<class Key, class Value>
 class HashDictionary : public Dictionary<Key, Value>
 {
-private:
-  /// @brief private constant, initial allocation size for empty hash
-  ///   dictionaries if not specified
-  const static int INITIAL_ALLOCATION_SIZE = 5;
-
-  /// @brief  An array of KeyValuePair items, the hash table this
-  ///   class/container is managing.
-  KeyValuePair<Key, Value>* hashTable;
-
-  /// @brief  The actual allocated memory size of the hashTable array
-  int allocationSize;
-
-  // private member methods for managing the HashDictionary internally
-  void growHashDictionaryIfNeeded();
-
 public:
   // constructors and destructors
   HashDictionary(int allocationSize = INITIAL_ALLOCATION_SIZE);
@@ -63,6 +50,21 @@ public:
 
   // overloaded operators and other functions for testing
   KeyValuePair<Key, Value>& operator[](int index);
+
+private:
+  /// @brief private constant, initial allocation size for empty hash
+  ///   dictionaries if not specified
+  const static int INITIAL_ALLOCATION_SIZE = 5;
+
+  /// @brief  An array of KeyValuePair items, the hash table this
+  ///   class/container is managing.
+  KeyValuePair<Key, Value>* hashTable;
+
+  /// @brief  The actual allocated memory size of the hashTable array
+  int allocationSize;
+
+  // private member methods for managing the HashDictionary internally
+  void growHashDictionaryIfNeeded();
 };
 
 #endif // HASHDICTIONARY_HPP

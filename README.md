@@ -142,17 +142,15 @@ you have completed the following setup steps.
    current class semester and section.
 2. Clone the repository using the SSH URL to your local class DevBox
    development environment.
-3. Checkout the 'origins/feedback' branch to your local working DevBox
-   repository.
 4. Configure the project by running the `configure` script from a terminal.
 5. Confirm that the project builds and runs, though no tests will be
    defined or run initially.  If the project does not build on the first
    checkout, please inform the instructor.
 6. You should create the issue for Task 1 and/or for all tasks for the assignment
    now before beginning the first task.  On your GitHub account, go to issues,
-   and create it/them from the issue templates for the assignment.  Also you
-   should close the initial Pull request that should be automatically
-   opened for you, so that you can open your own when committing your work.
+   and create it/them from the issue templates for the assignment.  Also
+   make sure that you link all task issues with the open `Feedback`
+   pull request in your GitHub assignment repository.
 
 
 # Assignment Tasks
@@ -264,7 +262,7 @@ as follows.
 When you are satisfied with your work on the `probe()` and `hash()`
 methods, you should be able to pass all of the tests for task 1 in our
 testing file.  Once working, commit your changes for these two
-function, and push them to the `feedback` branch of your assignment
+function, and push them to the `Feedback` pull request of your assignment
 repository.
 
 
@@ -367,7 +365,7 @@ to the key you are searching for in the loop of the algorithm.
 Once you have implemented this work for the two private member functions
 you should be able to pass the test cases now for task 2.  When you are
 satisfied with your work, commit your changes and push your commit
-to the `feedback` branch of your assignment repository.
+to the `Feedback` pull request of your assignment repository.
 
 ## Task 3: Implement the `HashDictionary` public `insert()` API Method
 
@@ -436,7 +434,7 @@ growing the hash table only happens after we are sure that a new
 key/value pair is in fact going to be inserted into the table.
 
 Once you are satisfied with your work and passing the tests, commit your
-implementation and push it to the `feedback` branch of your repository.
+implementation and push it to the `Feedback` pull request of your repository.
 Some tests for task 3 or later may not pass unless you uncomment the calls
 to `insert()` in the `growHashDictionaryIfNeeded()` and in the array
 based constructor, so make sure you have uncommented those calls there when
@@ -467,7 +465,7 @@ The steps then to implement the `find()` method are as follows:
    
 And that is it for the `find()` method.  Once you are satisfied with your work
 and can pass the tests for task 4, commit your changes and push them to the
-`feedback` branch of your assignment repository.
+`Feedback` branch of pull request assignment repository.
 
 ## Task 5: Implement the `HashDictionary` public `remove()` API Method
 
@@ -491,7 +489,7 @@ Once you are passing the first test case of the `remove()` function,
 don't forget to uncomment the second test case and make sure these
 tests pass as well.  Once you are satisfied with your work, commit
 your changes for the `remove()` function and push them to the
-`feedback` branch of your assignment repository.
+`Feedback` pull request of your assignment repository.
 
 # Assignment Submission
 

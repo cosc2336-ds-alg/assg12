@@ -14,7 +14,9 @@
 #ifndef KEYVALUEPAIR_HPP
 #define KEYVALUEPAIR_HPP
 
-/** KeyValue Pair
+/** @class KeyValuePair
+ * @brief Key/Value pair container records
+ *
  * Definition of basic key/value pair container.  This container of course
  * associates a value (usually a record like a class or struct), with
  * a key (can be anything).
@@ -35,6 +37,22 @@
 template<class Key, class Value>
 class KeyValuePair
 {
+public:
+  // constructors
+  KeyValuePair();
+  KeyValuePair(Key key, Value value);
+
+  // accessors, getters and setters
+  Key getKey() const;
+  Value& getValue();
+
+  // information methods to manage empty and/or missing slots in a Dictionary
+  // container
+  void setEmpty();
+  void setMissing();
+  bool isEmpty() const;
+  bool isMissing() const;
+
 private:
   /// @brief The key for a key/value pair item/association.
   Key key;
@@ -52,22 +70,6 @@ private:
   ///   the value was removed and is now missing.  This is needed for closed hashing
   ///   schemes to correctly implement probe sequences when values can be removed
   bool missing;
-
-public:
-  // constructors
-  KeyValuePair();
-  KeyValuePair(Key key, Value value);
-
-  // accessors, getters and setters
-  Key getKey() const;
-  Value& getValue();
-
-  // information methods to manage empty and/or missing slots in a Dictionary
-  // container
-  void setEmpty();
-  void setMissing();
-  bool isEmpty() const;
-  bool isMissing() const;
 };
 
 #endif // KEYVALUEPAIR_HPP

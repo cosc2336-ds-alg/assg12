@@ -18,22 +18,27 @@ using namespace std;
 #ifndef EMPLOYEE_HPP
 #define EMPLOYEE_HPP
 
-// This should really be a class constant, however this
-// global constant represents a flag that is used to
-// indicate empty slots and/or failed search.
-// const int EMPTY_EMPLOYEE_ID = 0;
-// const int MISSING_EMPLOYEE_ID = -1;
-
-/** Employee
- * A simple Employee class/record to demonstrate/test
- * our hashing dictionary assignment.
- * NOTE: we are using 0 as a flag to represent an unused
- * slot or an invalid/empty employee.  This is used/assumed
- * by our dictionary class to determine if a slot is empty
- * and/or to give a failure result for a failed search.
+/** @class Employee
+ * @brief A simple Employee class/record for testing.
+ *
+ * A simple Employee class/record to demonstrate/test our hashing
+ * dictionary assignment.
  */
 class Employee
 {
+public:
+  // constructors and desctuctors
+  Employee();
+  Employee(int id, string name, string address, float salary);
+
+  // accessor and information methods
+  int getId() const;
+  string getName() const;
+  string str() const;
+
+  // class friend function and friend overloaded operators
+  friend ostream& operator<<(ostream& out, Employee& employee);
+
 private:
   /// @brief The key/index of this Employee record
   int id;
@@ -50,19 +55,6 @@ private:
   /// @brief The employee's current salary information.  Represents other types of
   ///   information we might need to organized and work with employees in a database.
   float salary;
-
-public:
-  // constructors and desctuctors
-  Employee();
-  Employee(int id, string name, string address, float salary);
-
-  // accessor and information methods
-  int getId() const;
-  string getName() const;
-  string str() const;
-
-  // class friend function and friend overloaded operators
-  friend ostream& operator<<(ostream& out, Employee& employee);
 };
 
 #endif // EMPLOYEE_HPP

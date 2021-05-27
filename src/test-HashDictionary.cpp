@@ -62,7 +62,7 @@ TEST_CASE("HashDictionaryNode<int, Employee> test hash dictionaryconstruction <i
   CHECK(empty.str() == emptyTable);
 }
 
-/** Test HashDictionary probe hashing helper function
+/** Task 1: Test HashDictionary probe hashing helper function
  */
 /*
    TEST_CASE("HashDictionaryNode<int, Employee> test probe() hashing helper function",
@@ -159,7 +159,7 @@ TEST_CASE("HashDictionaryNode<int, Employee> test hash dictionaryconstruction <i
    }
  */
 
-/** Test HashDictionary hash hashing helper function, for a table of size 31
+/** Task 1: Test HashDictionary hash hashing helper function, for a table of size 31
  */
 /*
    TEST_CASE("HashDictionaryNode<int, Employee> test hash() hashing helper function, table size 31",
@@ -223,7 +223,7 @@ TEST_CASE("HashDictionaryNode<int, Employee> test hash dictionaryconstruction <i
    }
  */
 
-/** Test HashDictionary probeForAvailableSlot.  We need to implement
+/** Task 2: Test HashDictionary probeForAvailableSlot.  We need to implement
  * insert() before we can create more extensive tests, so we build
  * a table of empty and non empty values by hand here.
  */
@@ -309,7 +309,7 @@ TEST_CASE("HashDictionaryNode<int, Employee> test hash dictionaryconstruction <i
    }
  */
 
-/** Test HashDictionary probeForKeySlot.  We need to implement
+/** Task 2: Test HashDictionary probeForKeySlot.  We need to implement
  * insert() before we can create more extensive tests, so we build
  * a table of empty and non empty values by hand here.
  */
@@ -481,7 +481,7 @@ const string finalTableAfterInserts = "<HashDictionary> size: 7\n"
                                       "     Key  : 272349849\n"
                                       "     Value: ( id: 272349849 | Tunt, Cheryl | Park Ave. New York NY | 22520.45 )\n";
 
-/** Test HashDictionary insert API operation
+/** Task 3: Test HashDictionary insert API operation
  */
 /*
    TEST_CASE("HashDictionaryNode<int, Employee> test insert() API member function",
@@ -611,7 +611,7 @@ const string finalTableAfterInserts = "<HashDictionary> size: 7\n"
    }
  */
 
-/** Test HashDictionary find API operation
+/** Task 4: Test HashDictionary find API operation
  */
 /*
    TEST_CASE("HashDictionaryNode<int, Employee> test find() API member function",
@@ -741,7 +741,7 @@ const string tableAfter3Removals = "<HashDictionary> size: 4\n"
                                    "     Key  : MISSING\n"
                                    "     Value:\n";
 
-/** Test HashDictionary remove API operation
+/** Task 5: Test HashDictionary remove API operation
  */
 /*
    TEST_CASE("HashDictionaryNode<int, Employee> test remove() API member function",
@@ -829,7 +829,7 @@ const string tableAfter3Removals = "<HashDictionary> size: 4\n"
    }
  */
 
-/** Test HashDictionary remove API operation.  Further tests that if remove
+/** Task 5: Test HashDictionary remove API operation.  Further tests that if remove
  * a value in a probe sequence, the value is set to MISSING, and find, remove
  * and insert still work if having to explore a probe sequence with a MISSING
  * value along the path.

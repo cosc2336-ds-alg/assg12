@@ -16,7 +16,9 @@
 #include <iostream>
 using namespace std;
 
-/** size accessor
+/**
+ * @brief Size accessor
+ *
  * Accessor method to get the current size of this Dictionary of values.
  *
  * @returns int Returns the current size of the dictionary of values.
@@ -27,7 +29,9 @@ int Dictionary<Key, Value>::getSize() const
   return size;
 }
 
-/** check if empty binary tree
+/**
+ * @brief Check if empty dictionary
+ *
  * Accessor method to test if the Dictionary is currently
  * empty or not.
  *
@@ -42,8 +46,8 @@ bool Dictionary<Key, Value>::isEmpty() const
   return size == 0;
 }
 
-/** Dictionary output operator
- *@brief overload output stream operator for Dictionary type.
+/**
+ * @brief Overload output stream operator for Dictionary type.
  *
  * Overload the output stream operator so that we can display current
  * values of a Dictionary on standard output.  We can define this in the

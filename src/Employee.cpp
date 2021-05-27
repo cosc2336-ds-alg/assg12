@@ -18,7 +18,9 @@
 #include <string>
 using namespace std;
 
-/** constructor
+/**
+ * @brief Default constructor
+ *
  * Default constructor for our Employee record/class.  Construct an
  * empty employee record
  */
@@ -30,7 +32,9 @@ Employee::Employee()
   this->salary = 0.0;
 }
 
-/** constructor
+/**
+ * @brief Standard constructor
+ *
  * Basic constructor for our Employee record/class.
  */
 Employee::Employee(int id, string name, string address, float salary)
@@ -41,7 +45,9 @@ Employee::Employee(int id, string name, string address, float salary)
   this->salary = salary;
 }
 
-/** id accessor
+/**
+ * @brief id accessor
+ *
  * Accessor method to get the employee id.
  *
  * @returns int Returns the integer employee id value.
@@ -51,7 +57,9 @@ int Employee::getId() const
   return id;
 }
 
-/** name accessor
+/**
+ * @brief name accessor
+ *
  * Accessor method to get the employee name.
  *
  * @returns string Returns the string containing the full
@@ -62,7 +70,9 @@ string Employee::getName() const
   return name;
 }
 
-/** to string
+/**
+ * @brief Employee to string
+ *
  * Create and return a string representation of this Employee record.
  *
  * @returns string Returns a string representation of the information in
@@ -77,7 +87,9 @@ string Employee::str() const
   return out.str();
 }
 
-/** overload operator<<
+/**
+ * @brief overload output stream operator
+ *
  * Friend function to ouput representation of Employee to an
  * output stream.
  *

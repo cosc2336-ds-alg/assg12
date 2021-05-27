@@ -29,11 +29,6 @@ using namespace std;
 template<class Key, class Value>
 class Dictionary
 {
-protected:
-  /// @brief the current size of the Dictionary of values, this is
-  ///   protected so derived classes can access it
-  int size;
-
 public:
   // accessor and information methods
   int getSize() const;
@@ -49,6 +44,11 @@ public:
   // friend functions and friend operators
   template<typename K, typename V>
   friend ostream& operator<<(ostream& out, const Dictionary<K, V>& rhs);
+
+protected:
+  /// @brief the current size of the Dictionary of values, this is
+  ///   protected so derived classes can access it
+  int size;
 };
 
 #endif // _DICTIONARY_HPP_

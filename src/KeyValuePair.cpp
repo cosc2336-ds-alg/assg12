@@ -17,7 +17,9 @@
 #include <string>
 using namespace std;
 
-/** constructor
+/**
+ * @brief Default constructor
+ *
  * Default constructor for a KeyValuePair.
  */
 template<class Key, class Value>
@@ -28,7 +30,9 @@ KeyValuePair<Key, Value>::KeyValuePair()
   this->setEmpty();
 }
 
-/** constructor
+/**
+ * @brief Standard constructor
+ *
  * Standard constructor for a KeyValuePair.
  *
  * @param key The key portion that is to be stored in this pair.
@@ -43,7 +47,9 @@ KeyValuePair<Key, Value>::KeyValuePair(Key key, Value value)
   this->missing = false;
 }
 
-/** key accessor
+/**
+ * @brief key accessor
+ *
  * Accessor method to get and return the key for this key/value pair
  *
  * @returns Key Returns an object of template type Key, which is the
@@ -55,7 +61,9 @@ Key KeyValuePair<Key, Value>::getKey() const
   return this->key;
 }
 
-/** value accessor
+/**
+ * @brief value accessor
+ *
  * Accessor method to get and return the value for this key/value pair.
  *
  * @returns Value& Returns a reference to the value object in this
@@ -67,7 +75,8 @@ Value& KeyValuePair<Key, Value>::getValue()
   return this->value;
 }
 
-/** set slot to emptyy
+/**
+ * @brief Set slot to emptyy
  * Mutator method to set the key/value pair as being empty.
  * The key and value are set to default values, the empty flag
  * is set to true and the missing flag is false.
@@ -81,7 +90,9 @@ void KeyValuePair<Key, Value>::setEmpty()
   this->missing = false;
 }
 
-/** set slot as missing
+/**
+ * @brief Set slot as missing
+ *
  * Mutator method to set this key/value pair slot to be missing.
  * The key and value are set to default values, the empty flag is set
  * to false, but the missing flag is set to true.
@@ -95,7 +106,9 @@ void KeyValuePair<Key, Value>::setMissing()
   this->missing = true;
 }
 
-/** is slot empty
+/**
+ * @brief Is slot empty
+ *
  * Accessor method, returns true if the key/value pair slot is empty,
  * false if it is not. An empty slot means it can be assinged a
  * key/value pair in the container in this memory allocation.
@@ -106,7 +119,9 @@ bool KeyValuePair<Key, Value>::isEmpty() const
   return this->empty;
 }
 
-/** is slot missing
+/**
+ * @brief Is slot missing
+ *
  * Accessor method, returns true if the key/value pair slot is missing,
  * false if it is not.  A missing slot is a slot that had a value but
  * was removed.  For purposes of search, a missing slot is not empty,

@@ -1,7 +1,7 @@
 ---
 title: 'Assignment Dictionaries and Hashing'
 author: 'COSC 2336: Data Structures and Algorithms'
-date: 'Summer 2021'
+date: 'Spring 2024'
 ---
 
 \newcommand{\BigO}[1]{$\mathcal{O}(#1)$}
@@ -119,7 +119,7 @@ using and adding code to for this assignment.
 
 | File Name                                       | Description                                                                                                                      |
 |-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| `src/test-HashDictionary.cpp`                   | Unit tests of the array based hashing `HashDictionary` implementation of the `Dictionary` API                                    |
+| `src/assg12-HashDictionary-tests.cpp`           | Unit tests of the array based hashing `HashDictionary` implementation of the `Dictionary` API                                    |
 | `include/Dictionary.hpp`                        | Header file of the ADT base `Dictionary` class that defines the `Dictionary` interface / abstraction                             |
 | `include/HashDictionary.hpp`                    | Header file of the concrete array based hashing implementation of the `Dictionary` abstract data type                            |
 | `include/KeyValuePair.hpp`                      | Header file of the `KeyValuePair` template abstraction, used to store key/value record pairs in `Dictionary` containers.         |
@@ -141,12 +141,12 @@ you have completed the following setup steps.
    assignment invitation link for 'Assignment Recursion' for our
    current class semester and section.
 2. Clone the repository using the SSH URL to your local class DevBox
-   development environment.
-4. Configure the project by running the `configure` script from a terminal.
-5. Confirm that the project builds and runs, though no tests will be
+   development environment. Make sure to open the cloned
+   folder and restart inside of the correct Dev Container.
+3. Confirm that the project builds and runs, though no tests will be
    defined or run initially.  If the project does not build on the first
    checkout, please inform the instructor.
-6. You should create the issue for Task 1 and/or for all tasks for the assignment
+4. You should create the issue for Task 1 and/or for all tasks for the assignment
    now before beginning the first task.  On your GitHub account, go to issues,
    and create it/them from the issue templates for the assignment.  Also
    make sure that you link all task issues with the open `Feedback`
